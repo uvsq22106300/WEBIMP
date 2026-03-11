@@ -2,7 +2,7 @@ from ner import NERExtractor
 
 extractor = NERExtractor()
 
-sentences = extractor.load_sentences("../output/sentence.json")
+sentences = extractor.load_sentences("../output/sentences.json")
 entities = extractor.extract_entities(sentences)
 extractor.save_entities(entities, "../output/entities.json")
 

@@ -1,0 +1,62 @@
+[
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_001",
+        "text": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_002",
+        "text": "Il a étudié la physique à l'École polytechnique fédérale de Zurich."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_003",
+        "text": "Il a travaillé à l'Université de Princeton."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_004",
+        "text": "Il était marié à Mileva Marić."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_005",
+        "text": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_006",
+        "text": "Elle a étudié la physique et la chimie à la Sorbonne."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_007",
+        "text": "Elle a travaillé à l'Université de Paris."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_008",
+        "text": "Elle était mariée à Pierre Curie."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_009",
+        "text": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_010",
+        "text": "Il a étudié le droit à l'Université Harvard."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_011",
+        "text": "Il a travaillé à la Maison-Blanche."
+    },
+    {
+        "doc_id": "doc_01",
+        "sent_id": "sent_012",
+        "text": "Il est marié à Michelle Obama."
+    }
+]

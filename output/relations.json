@@ -1,0 +1,156 @@
+[
+    {
+        "sent_id": "sent_001",
+        "subject": "Albert Einstein",
+        "relation": "birthDate",
+        "object": "14 mars 1879",
+        "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne."
+    },
+    {
+        "sent_id": "sent_001",
+        "subject": "Albert Einstein",
+        "relation": "bornInCity",
+        "object": "Ulm",
+        "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne."
+    },
+    {
+        "sent_id": "sent_001",
+        "subject": "Albert Einstein",
+        "relation": "bornInCountry",
+        "object": "Allemagne",
+        "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne."
+    },
+    {
+        "sent_id": "sent_002",
+        "subject": "Albert Einstein",
+        "relation": "studiedField",
+        "object": "physique",
+        "evidence": "Il a étudié la physique à l'École polytechnique fédérale de Zurich."
+    },
+    {
+        "sent_id": "sent_002",
+        "subject": "Albert Einstein",
+        "relation": "studiedAt",
+        "object": "École polytechnique fédérale de Zurich",
+        "evidence": "Il a étudié la physique à l'École polytechnique fédérale de Zurich."
+    },
+    {
+        "sent_id": "sent_003",
+        "subject": "Albert Einstein",
+        "relation": "worksAt",
+        "object": "Université de Princeton",
+        "evidence": "Il a travaillé à l'Université de Princeton."
+    },
+    {
+        "sent_id": "sent_004",
+        "subject": "Albert Einstein",
+        "relation": "marriedTo",
+        "object": "Mileva Marić",
+        "evidence": "Il était marié à Mileva Marić."
+    },
+    {
+        "sent_id": "sent_005",
+        "subject": "Marie Curie",
+        "relation": "birthDate",
+        "object": "7 novembre 1867",
+        "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne."
+    },
+    {
+        "sent_id": "sent_005",
+        "subject": "Marie Curie",
+        "relation": "bornInCity",
+        "object": "Varsovie",
+        "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne."
+    },
+    {
+        "sent_id": "sent_005",
+        "subject": "Marie Curie",
+        "relation": "bornInCountry",
+        "object": "Pologne",
+        "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne."
+    },
+    {
+        "sent_id": "sent_006",
+        "subject": "Marie Curie",
+        "relation": "studiedField",
+        "object": "physique",
+        "evidence": "Elle a étudié la physique et la chimie à la Sorbonne."
+    },
+    {
+        "sent_id": "sent_006",
+        "subject": "Marie Curie",
+        "relation": "studiedField",
+        "object": "chimie",
+        "evidence": "Elle a étudié la physique et la chimie à la Sorbonne."
+    },
+    {
+        "sent_id": "sent_006",
+        "subject": "Marie Curie",
+        "relation": "studiedAt",
+        "object": "Sorbonne",
+        "evidence": "Elle a étudié la physique et la chimie à la Sorbonne."
+    },
+    {
+        "sent_id": "sent_007",
+        "subject": "Marie Curie",
+        "relation": "worksAt",
+        "object": "Université de Paris",
+        "evidence": "Elle a travaillé à l'Université de Paris."
+    },
+    {
+        "sent_id": "sent_008",
+        "subject": "Marie Curie",
+        "relation": "marriedTo",
+        "object": "Pierre Curie",
+        "evidence": "Elle était mariée à Pierre Curie."
+    },
+    {
+        "sent_id": "sent_009",
+        "subject": "Barack Obama",
+        "relation": "birthDate",
+        "object": "4 août 1961",
+        "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis."
+    },
+    {
+        "sent_id": "sent_009",
+        "subject": "Barack Obama",
+        "relation": "bornInCity",
+        "object": "Honolulu",
+        "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis."
+    },
+    {
+        "sent_id": "sent_009",
+        "subject": "Barack Obama",
+        "relation": "bornInCountry",
+        "object": "États-Unis",
+        "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis."
+    },
+    {
+        "sent_id": "sent_010",
+        "subject": "Barack Obama",
+        "relation": "studiedField",
+        "object": "droit",
+        "evidence": "Il a étudié le droit à l'Université Harvard."
+    },
+    {
+        "sent_id": "sent_010",
+        "subject": "Barack Obama",
+        "relation": "studiedAt",
+        "object": "Université Harvard",
+        "evidence": "Il a étudié le droit à l'Université Harvard."
+    },
+    {
+        "sent_id": "sent_011",
+        "subject": "Barack Obama",
+        "relation": "worksAt",
+        "object": "Maison-Blanche",
+        "evidence": "Il a travaillé à la Maison-Blanche."
+    },
+    {
+        "sent_id": "sent_012",
+        "subject": "Barack Obama",
+        "relation": "marriedTo",
+        "object": "Michelle Obama",
+        "evidence": "Il est marié à Michelle Obama."
+    }
+]
