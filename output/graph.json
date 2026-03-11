@@ -1,0 +1,258 @@
+{
+    "nodes": [
+        {
+            "id": "Albert_Einstein",
+            "label": "Albert Einstein",
+            "type": "PERSON"
+        },
+        {
+            "id": "14_mars_1879",
+            "label": "14 mars 1879",
+            "type": "DATE"
+        },
+        {
+            "id": "Ulm",
+            "label": "Ulm",
+            "type": "CITY"
+        },
+        {
+            "id": "Allemagne",
+            "label": "Allemagne",
+            "type": "COUNTRY"
+        },
+        {
+            "id": "physique",
+            "label": "physique",
+            "type": "FIELD"
+        },
+        {
+            "id": "École_polytechnique_fédérale_de_Zurich",
+            "label": "École polytechnique fédérale de Zurich",
+            "type": "ORG"
+        },
+        {
+            "id": "Université_de_Princeton",
+            "label": "Université de Princeton",
+            "type": "ORG"
+        },
+        {
+            "id": "Mileva_Marić",
+            "label": "Mileva Marić",
+            "type": "PERSON"
+        },
+        {
+            "id": "Marie_Curie",
+            "label": "Marie Curie",
+            "type": "PERSON"
+        },
+        {
+            "id": "7_novembre_1867",
+            "label": "7 novembre 1867",
+            "type": "DATE"
+        },
+        {
+            "id": "Varsovie",
+            "label": "Varsovie",
+            "type": "CITY"
+        },
+        {
+            "id": "Pologne",
+            "label": "Pologne",
+            "type": "COUNTRY"
+        },
+        {
+            "id": "chimie",
+            "label": "chimie",
+            "type": "FIELD"
+        },
+        {
+            "id": "Sorbonne",
+            "label": "Sorbonne",
+            "type": "ORG"
+        },
+        {
+            "id": "Université_de_Paris",
+            "label": "Université de Paris",
+            "type": "ORG"
+        },
+        {
+            "id": "Pierre_Curie",
+            "label": "Pierre Curie",
+            "type": "PERSON"
+        },
+        {
+            "id": "Barack_Obama",
+            "label": "Barack Obama",
+            "type": "PERSON"
+        },
+        {
+            "id": "4_août_1961",
+            "label": "4 août 1961",
+            "type": "DATE"
+        },
+        {
+            "id": "Honolulu",
+            "label": "Honolulu",
+            "type": "CITY"
+        },
+        {
+            "id": "États_Unis",
+            "label": "États-Unis",
+            "type": "COUNTRY"
+        },
+        {
+            "id": "droit",
+            "label": "droit",
+            "type": "FIELD"
+        },
+        {
+            "id": "Université_Harvard",
+            "label": "Université Harvard",
+            "type": "ORG"
+        },
+        {
+            "id": "Maison_Blanche",
+            "label": "Maison-Blanche",
+            "type": "ORG"
+        },
+        {
+            "id": "Michelle_Obama",
+            "label": "Michelle Obama",
+            "type": "PERSON"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Albert_Einstein",
+            "target": "14_mars_1879",
+            "relation": "birthDate",
+            "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "Ulm",
+            "relation": "bornInCity",
+            "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "Allemagne",
+            "relation": "bornInCountry",
+            "evidence": "Albert Einstein est né le 14 mars 1879 à Ulm en Allemagne"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "physique",
+            "relation": "studiedField",
+            "evidence": "Il a étudié la physique à l'École polytechnique fédérale de Zurich"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "École_polytechnique_fédérale_de_Zurich",
+            "relation": "studiedAt",
+            "evidence": "Il a étudié la physique à l'École polytechnique fédérale de Zurich"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "Université_de_Princeton",
+            "relation": "worksAt",
+            "evidence": "Il a travaillé à l'Université de Princeton"
+        },
+        {
+            "source": "Albert_Einstein",
+            "target": "Mileva_Marić",
+            "relation": "marriedTo",
+            "evidence": "Il était marié à Mileva Marić"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "7_novembre_1867",
+            "relation": "birthDate",
+            "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "Varsovie",
+            "relation": "bornInCity",
+            "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "Pologne",
+            "relation": "bornInCountry",
+            "evidence": "Marie Curie est née le 7 novembre 1867 à Varsovie en Pologne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "physique",
+            "relation": "studiedField",
+            "evidence": "Elle a étudié la physique et la chimie à la Sorbonne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "chimie",
+            "relation": "studiedField",
+            "evidence": "Elle a étudié la physique et la chimie à la Sorbonne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "Sorbonne",
+            "relation": "studiedAt",
+            "evidence": "Elle a étudié la physique et la chimie à la Sorbonne"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "Université_de_Paris",
+            "relation": "worksAt",
+            "evidence": "Elle a travaillé à l'Université de Paris"
+        },
+        {
+            "source": "Marie_Curie",
+            "target": "Pierre_Curie",
+            "relation": "marriedTo",
+            "evidence": "Elle était mariée à Pierre Curie"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "4_août_1961",
+            "relation": "birthDate",
+            "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "Honolulu",
+            "relation": "bornInCity",
+            "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "États_Unis",
+            "relation": "bornInCountry",
+            "evidence": "Barack Obama est né le 4 août 1961 à Honolulu aux États-Unis"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "droit",
+            "relation": "studiedField",
+            "evidence": "Il a étudié le droit à l'Université Harvard"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "Université_Harvard",
+            "relation": "studiedAt",
+            "evidence": "Il a étudié le droit à l'Université Harvard"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "Maison_Blanche",
+            "relation": "worksAt",
+            "evidence": "Il a travaillé à la Maison-Blanche"
+        },
+        {
+            "source": "Barack_Obama",
+            "target": "Michelle_Obama",
+            "relation": "marriedTo",
+            "evidence": "Il est marié à Michelle Obama"
+        }
+    ]
+}
