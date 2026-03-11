@@ -13,7 +13,6 @@ class RelationExtractor:
 
     def clean_text(self, value):
         return value.strip().rstrip(".").strip()
-    
 
     def remove_leading_article(self, value):
         value = self.clean_text(value)
@@ -29,24 +28,11 @@ class RelationExtractor:
 
     def split_fields(self, field_text):
         field_text = self.clean_text(field_text)
-
-        # séparer sur " et "
         parts = [p.strip() for p in re.split(r"\bet\b", field_text) if p.strip()]
-
-        cleaned_parts = []
-        for part in parts:
-            part = part.strip()
-
-            for prefix in ["la ", "le ", "les ", "l'"]:
-                if part.lower().startswith(prefix):
-                    part = part[len(prefix):]
-                    break
-
-            cleaned_parts.append(part.strip())
-
+        cleaned_parts = [self.remove_leading_article(part) for part in parts]
         return cleaned_parts
 
-    def extract_birth_place(self, birth_place_text):
+    def split_birth_place(self, birth_place_text):
         birth_place_text = self.clean_text(birth_place_text)
 
         city = None
@@ -69,13 +55,23 @@ class RelationExtractor:
 
         return city, country
 
+    def make_candidate(self, sent_id, subject, raw_relation, obj, evidence):
+        return {
+            "sent_id": sent_id,
+            "subject": self.clean_text(subject),
+            "raw_relation": self.clean_text(raw_relation),
+            "object": self.clean_text(obj),
+            "evidence": self.clean_text(evidence)
+        }
+
     def extract_relations(self, sentences):
-        relations = []
+        candidates = []
 
         for sentence in sentences:
             text = sentence["text"]
+            sent_id = sentence["sent_id"]
 
-            # 1. naissance : nom + date + lieu
+            # 1) naissance
             birth_match = re.search(
                 r"([A-ZÉÈÀÂÊÎÔÛÄËÏÖÜ][A-Za-zÉÈÀÂÊÎÔÛÄËÏÖÜéèàâêîôûç' -]+?) est né[e]? le ([0-9]{1,2} [A-Za-zéûôîàè]+ [0-9]{4}) à ([A-ZÉÈÀÂÊÎÔÛÄËÏÖÜ][A-Za-zÉÈÀÂÊÎÔÛÄËÏÖÜéèàâêîôûç' -]+)",
                 text
@@ -85,68 +81,46 @@ class RelationExtractor:
                 birth_date = self.clean_text(birth_match.group(2))
                 birth_place = self.clean_text(birth_match.group(3))
 
-                city, country = self.extract_birth_place(birth_place)
-
+                city, country = self.split_birth_place(birth_place)
                 self.current_person = person
 
-                relations.append({
-                    "sent_id": sentence["sent_id"],
-                    "subject": person,
-                    "relation": "birthDate",
-                    "object": birth_date,
-                    "evidence": text
-                })
+                candidates.append(
+                    self.make_candidate(sent_id, person, "est né le", birth_date, text)
+                )
 
                 if city:
-                    relations.append({
-                        "sent_id": sentence["sent_id"],
-                        "subject": person,
-                        "relation": "bornInCity",
-                        "object": city,
-                        "evidence": text
-                    })
+                    candidates.append(
+                        self.make_candidate(sent_id, person, "est né à", city, text)
+                    )
 
                 if country:
-                    relations.append({
-                        "sent_id": sentence["sent_id"],
-                        "subject": person,
-                        "relation": "bornInCountry",
-                        "object": country,
-                        "evidence": text
-                    })
+                    candidates.append(
+                        self.make_candidate(sent_id, person, "est né dans le pays", country, text)
+                    )
 
                 continue
 
-            # 2. études
+            # 2) études
             study_match = re.search(
                 r"(?:Il|Elle) a étudié (.+?) à (.+)",
                 text
             )
             if study_match and self.current_person:
                 field_text = self.clean_text(study_match.group(1))
-                place = self.remove_leading_article(study_match.group(2))
-
+                study_place = self.remove_leading_article(study_match.group(2))
                 fields = self.split_fields(field_text)
 
                 for field in fields:
-                    relations.append({
-                        "sent_id": sentence["sent_id"],
-                        "subject": self.current_person,
-                        "relation": "studiedField",
-                        "object": field,
-                        "evidence": text
-                    })
+                    candidates.append(
+                        self.make_candidate(sent_id, self.current_person, "a étudié", field, text)
+                    )
 
-                relations.append({
-                    "sent_id": sentence["sent_id"],
-                    "subject": self.current_person,
-                    "relation": "studiedAt",
-                    "object": place,
-                    "evidence": text
-                })
+                candidates.append(
+                    self.make_candidate(sent_id, self.current_person, "a étudié à", study_place, text)
+                )
                 continue
 
-            # 3. travail
+            # 3) travail
             work_match = re.search(
                 r"(?:Il|Elle) a travaillé à (.+)",
                 text
@@ -154,16 +128,12 @@ class RelationExtractor:
             if work_match and self.current_person:
                 workplace = self.remove_leading_article(work_match.group(1))
 
-                relations.append({
-                    "sent_id": sentence["sent_id"],
-                    "subject": self.current_person,
-                    "relation": "worksAt",
-                    "object": workplace,
-                    "evidence": text
-                })
+                candidates.append(
+                    self.make_candidate(sent_id, self.current_person, "a travaillé à", workplace, text)
+                )
                 continue
 
-            # 4. mariage
+            # 4) mariage
             married_match = re.search(
                 r"(?:Il|Elle) (?:est|était) marié[e]? à (.+)",
                 text
@@ -171,16 +141,12 @@ class RelationExtractor:
             if married_match and self.current_person:
                 spouse = self.clean_text(married_match.group(1))
 
-                relations.append({
-                    "sent_id": sentence["sent_id"],
-                    "subject": self.current_person,
-                    "relation": "marriedTo",
-                    "object": spouse,
-                    "evidence": text
-                })
+                candidates.append(
+                    self.make_candidate(sent_id, self.current_person, "est marié à", spouse, text)
+                )
                 continue
 
-        return relations
+        return candidates
 
     def save_relations(self, relations, output_path):
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
